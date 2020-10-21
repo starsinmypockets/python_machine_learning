@@ -62,6 +62,6 @@ def squared_distance(v: Vector, w:Vector):
     """(v1 - w1)**2 + ... (vn - wn)**2"""
     return sum_of_squares(subtract(v,w))
 
-def def distance(v: Vector, w: Vector):
+def distance(v: Vector, w: Vector):
     """ Compute distance between v and w"""
     return magnitude(subtract(v,w))
