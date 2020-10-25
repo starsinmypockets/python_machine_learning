@@ -55,28 +55,28 @@ def variance(xs: List[float]) -> float:
     return sum_of_squares(dev) / n - 1
 
 ## tbh I'm not sure what assertion this should pass
-print('variance', variance([2,4,6,8,10]))
+# print('variance', variance([2,4,6,8,10]))
 
 def standard_deviation(xs: List[float]) -> float:
     print('variance', variance(xs))
     return math.sqrt(variance(xs))
 
-print('Standard deviation', standard_deviation([2,4,6,8,10]))
+# print('Standard deviation', standard_deviation([2,4,6,8,10]))
 
 def interquartile(xs: List[float]) -> float:
     '''Returns difference between 75th and 25th percentile'''
     return quantile(xs, .75) - quantile(xs, .25)
 
-print(quantile([1,2,3,4], .75), quantile([1,2,3,4], .25))
-print(interquartile([1,2,3,4]))
+# print(quantile([1,2,3,4], .75), quantile([1,2,3,4], .25))
+# print(interquartile([1,2,3,4]))
 
 def covariance(xs: List[float], ys: List[float]) -> List[float]:
     assert len(xs) == len(ys), 'Lists must be of equal length'
     return dot(de_mean(xs), de_mean(ys)) / (len(xs) - 1)
 
-print(covariance([1,2,3,4,12],[2,4,7,18,33]))
-print(covariance([1,2,3,4], [1,2,3,4]))
-print(covariance([1,4,16,32], [1,1,1,1]))
+# print(covariance([1,2,3,4,12],[2,4,7,18,33]))
+# print(covariance([1,2,3,4], [1,2,3,4]))
+# print(covariance([1,4,16,32], [1,1,1,1]))
 
 def correlation(xs: List[float], ys:List[float]) -> float:
     '''Measure how much xs, ys vary from their means'''
@@ -88,6 +88,6 @@ def correlation(xs: List[float], ys:List[float]) -> float:
         return 0
 
 ## I'm not sure how to calculate assertions
-print(correlation([1,2,3,4,12],[2,4,7,18,33]))
-print(correlation([1,2,3,4], [20,12,3,4]))
-print(correlation([-2,-1,0,1,2], [2,1,0,1,2]))
+# print(correlation([1,2,3,4,12],[2,4,7,18,33]))
+# print(correlation([1,2,3,4], [20,12,3,4]))
+# print(correlation([-2,-1,0,1,2], [2,1,0,1,2]))
