@@ -52,13 +52,12 @@ def variance(xs: List[float]) -> float:
     assert len(xs) > 1, "variance requires list of at least two elements"
     n = len(xs)
     dev = de_mean(xs)
-    return sum_of_squares(dev) / n - 1
+    return sum_of_squares(dev) / (n - 1)
 
 ## tbh I'm not sure what assertion this should pass
 # print('variance', variance([2,4,6,8,10]))
 
 def standard_deviation(xs: List[float]) -> float:
-    print('variance', variance(xs))
     return math.sqrt(variance(xs))
 
 # print('Standard deviation', standard_deviation([2,4,6,8,10]))

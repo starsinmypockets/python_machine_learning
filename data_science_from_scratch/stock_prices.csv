@@ -1,0 +1,25 @@
+Code,Name,5 Yrs,10 Yrs,15 Yrs,20 Yrs
+AMEX,American Stock Exchange,$12.50,$25.00,$37.50,$50.00
+ASX,Australian Securities Exchange,$25.00,$50.00,$75.00,$100.00
+CBOT,Chicago Board of Trade,$10.00,$20.00,$30.00,$40.00
+CFE,Chicago Futures Exchange,$10.00,$20.00,$30.00,$40.00
+CME,Chicago Merchantile Exchange,$10.00,$20.00,$30.00,$40.00
+COMEX,New York Commodity Exchange,$10.00,$20.00,$30.00,$40.00
+EUREX,EUREX Futures Exchange,$10.00,n/a,n/a,n/a
+FOREX,Foreign Exchange,$25.00,$50.00,$75.00,$100.00
+HKEX,Hong Kong Stock Exchange,$25.00,$50.00,$75.00,$100.00
+INDEX,Global Indices,$25.00,$50.00,$75.00,$100.00
+KCBT,Kansas City Board of Trade,$10.00,$20.00,$30.00,$40.00
+LIFFE,LIFFE Futures and Options,$10.00,$20.00,n/a,n/a
+LSE,London Stock Exchange,$25.00,$50.00,$75.00,$100.00
+MGEX,Minneapolis Grain Exchange,$10.00,$20.00,$30.00,$40.00
+NASDAQ,NASDAQ Stock Exchange,$12.50,$25.00,$37.50,$50.00
+NYBOT,New York Board of Trade,$10.00,$20.00,$30.00,$40.00
+NYMEX,New York Merchantile Exchange,$10.00,$20.00,$30.00,$40.00
+NYSE,New York Stock Exchange,$12.50,$25.00,$37.50,$50.00
+OTCBB,OTC Bulletin Board,$12.50,$25.00,$37.50,$50.00
+SGX,Singapore Stock Exchange,$25.00,$50.00,$75.00,$100.00
+TSX,Toronto Stock Exchange,$25.00,$50.00,$75.00,$100.00
+TSXV,Toronto Venture Exchange,$25.00,$50.00,$75.00,$100.00
+USMF,Mutual Funds,$25.00,$50.00,$75.00,$100.00
+WCE,Winnipeg Commodity Exchange,$10.00,$20.00,$30.00,$40.00
