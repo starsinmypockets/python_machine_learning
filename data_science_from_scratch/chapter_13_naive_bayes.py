@@ -53,7 +53,7 @@ class NaiveBayesClassifier:
 
         # Iterate over words in vocab
         for token in self.tokens:
-            prob_if_spam, prob_if_ham = _probabilities(token)
+            prob_if_spam, prob_if_ham = self._probabilities(token)
 
             # If token appears in message add log prob 
             if token in text_tokens:
@@ -68,6 +68,7 @@ class NaiveBayesClassifier:
 
         prob_if_spam = math.exp(log_prob_if_spam)
         prob_if_ham = math.exp(log_prob_if_ham)
+        return prob_if_spam / (prob_if_spam + prob_if_ham)
 
 messages = [
         Message("spam rules", is_spam=True),
