@@ -50,7 +50,8 @@ petal_length_train, petal_length_test = split_data(petal_length, 0.7)
 
 fit = least_squares_fit(sepal_length, petal_length)
 predicted = [round(y * fit[1] + fit[0], 1) for y in sepal_length_test]
-errors = [abs((a[0] - a[1]) / a[0]) for a in zip(petal_length_test, predicted)]
+# Show the squared error:
+errors = [((a[0] - a[1]) / a[0]) ** 2 for a in zip(petal_length_test, predicted)]
 
 print(data[0])
 print('sepal_lengths:')
