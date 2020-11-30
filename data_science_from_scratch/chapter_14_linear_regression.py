@@ -44,10 +44,13 @@ with open('iris.data','r') as f_open:
             print('Invalid row', row)
 
 sepal_length = [row[0][0] for row in data if row[1] == 'Iris-versicolor']
+sepal_length_train, sepal_length_test = split_data(sepal_length, 0.7)
 petal_length = [row[0][1] for row in data if row[1] == 'Iris-versicolor']
+petal_length_train, petal_length_test = split_data(petal_length, 0.7)
+
 fit = least_squares_fit(sepal_length, petal_length)
-predicted = [round(y * fit[1] + fit[0], 1) for y in sepal_length]
-errors = [abs((a[0] - a[1]) / a[0]) for a in zip(petal_length, predicted)]
+predicted = [round(y * fit[1] + fit[0], 1) for y in sepal_length_test]
+errors = [abs((a[0] - a[1]) / a[0]) for a in zip(petal_length_test, predicted)]
 
 print(data[0])
 print('sepal_lengths:')
@@ -57,5 +60,5 @@ print(petal_length)
 print('predicted')
 print(predicted)
 print('fit -->', least_squares_fit(sepal_length, petal_length))
-print('predicteion error')
+print('prediction error')
 print(errors)
