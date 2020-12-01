@@ -1,6 +1,7 @@
 from typing import List
 from chapter_4_vectors import Vector, dot, vector_mean
 from chapter_8_gradient_descent import gradient_step
+from book_data import daily_minutes_good, inputs
 import random, tqdm
 
 def predict(x: Vector, beta: Vector) -> float:
@@ -34,7 +35,7 @@ def least_squares_fit(xs: List[Vector],
     assuming the model y = dot(x, beta)
     """
     # start with random guess
-    guess = [random.random for _ in xs[0]]
+    guess = [random.random() for _ in xs[0]]
     for _ in tqdm.trange(num_steps, desc="Least squares fit"):
         for start in range(0, len(xs), batch_size):
             batch_xs = xs[start:start + batch_size]
@@ -44,5 +45,15 @@ def least_squares_fit(xs: List[Vector],
                     for x, y in zip(batch_xs, batch_ys)])
 
             guess = gradient_step(guess, gradient, -learning_rate)
-    
+
     return guess
+
+# now we'll use the implementation to look at the friend data from the book
+
+random.seed(0)
+beta = least_squares_fit(inputs, daily_minutes_good)
+
+assert  30.5 < beta[0] <  30.7
+assert  0.96 < beta[1] <  1.00
+assert -1.78 < beta[2] < -1.77
+assert  0.67 < beta[3] <  0.68
