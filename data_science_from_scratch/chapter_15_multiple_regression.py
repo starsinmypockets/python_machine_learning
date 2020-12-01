@@ -1,6 +1,7 @@
 from typing import List
 from chapter_4_vectors import Vector, dot, vector_mean
 from chapter_8_gradient_descent import gradient_step
+from chapter_14_linear_regression import total_sum_of_squares
 from book_data import daily_minutes_good, inputs
 import random, tqdm
 
@@ -57,3 +58,8 @@ assert  30.5 < beta[0] <  30.7
 assert  0.96 < beta[1] <  1.00
 assert -1.78 < beta[2] < -1.77
 assert  0.67 < beta[3] <  0.68
+
+def multiple_r_squared(xs: List[Vector], ys: Vector, beta: Vector) -> float:
+    sum_of_squared_errors = sum(error(x, y, beta) ** 2
+            for x,y in zip(xs, ys)
+    return 1.0 - sum_of_squared_errors / total_sum_of_squares(ys)
