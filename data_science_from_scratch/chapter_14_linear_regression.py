@@ -1,5 +1,5 @@
 from chapter_4_vectors import Vector
-from chapter_5_statistics import correlation, standard_deviation, mean
+from chapter_5_statistics import correlation, standard_deviation, mean, de_mean
 from chapter_11_machine_learning import split_data
 from chapter_12_knn import LabeledPoint
 from typing import Tuple
@@ -63,3 +63,9 @@ print(predicted)
 print('fit -->', least_squares_fit(sepal_length, petal_length))
 print('prediction error')
 print(errors)
+
+def total_sum_of_squares(y: Vector) -> float:
+    return sum(v ** 2 for v in de_mean(y))
+
+def r_squared(alpha: float, beta: float, x: Vector, y: Vector) -> float:
+    return 1.0 - (sum_of_sqerrors(alpha, beta, x, y) / total_sum_of_squares(y))

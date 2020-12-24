@@ -1,7 +1,9 @@
 from typing import Tuple, Dict
 from collections import defaultdict, namedtuple
+from chapter_5_statistics import correlation
 from chapter_11_machine_learning import split_data
 from chapter_12_knn import knn_classifier, LabeledPoint
+from matplotlib import pyplot as plt
 import ipdb
 import pprint
 
@@ -16,6 +18,7 @@ with open('iris.data','r') as f_open:
             data.append(LabeledPoint([float(cell) for cell in row[0:4]], row[-1]))
         except:
             print('Invalid row', row)
+
 
 iris_train, iris_test = split_data(data, 0.70)
 print(len(iris_train), len(iris_test), len(data))
