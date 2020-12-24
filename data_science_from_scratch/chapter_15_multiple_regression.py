@@ -61,5 +61,7 @@ assert  0.67 < beta[3] <  0.68
 
 def multiple_r_squared(xs: List[Vector], ys: Vector, beta: Vector) -> float:
     sum_of_squared_errors = sum(error(x, y, beta) ** 2
-            for x,y in zip(xs, ys)
+            for x,y in zip(xs, ys))
     return 1.0 - sum_of_squared_errors / total_sum_of_squares(ys)
+
+assert 0.67 < multiple_r_squared(inputs, daily_minutes_good, beta) < 0.68
